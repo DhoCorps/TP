@@ -23,7 +23,9 @@
 */
 <!DOCTYPE html>
 <html lg="fr">
+<head>
 <meta title="GET"/>
+</head>    
     <body>
         <form action="#" method="get">
             <label for="prixHT">Veuillez entrer un prix HT SVP</label>
