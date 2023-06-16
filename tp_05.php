@@ -8,7 +8,7 @@
             <label for="nom">Entrez votre nom : </label>
                 <input type="text" id="nom" name="name">
                 <? if (!empty($_POST['name'])){
-                    $_COOKIE['nom'] = $_POST['name'];
+                    $setcookie('nom', $_POST['name'], time()+3600);
                 }
                     elseif (!empty($_COOKIE['nom'])){
                         echo $_COOKIE['nom'];
@@ -19,9 +19,9 @@
                 }
                 </input>
             <label for="prenom">Entrez votre prénom : </label>
-            <input type="text" id="prenom" name="lastname">
-            <? if (!empty($_POST['lastname'])){
-                $_COOKIE['prenom'] = $_POST['lastname'];
+            <input type="text" id="prenom" name="firstname">
+            <? if (!empty($_POST['firstname'])){
+                $setcookie('prenom', $_POST['firstname'], time()+3600);
             }
                 elseif (!empty($_COOKIE['prenom'])){
                     echo $_COOKIE['prenom'];
@@ -34,7 +34,7 @@
             </input>
             <label for="age">Entrez votre age : </label>
             <input type="text" id="age" name="old"><? if (!empty($_POST['old'])){
-                $_COOKIE['age'] = $_POST['old'];
+                $setcookie('age', $_POST['old'], time()+3600);
             }
                 elseif (!empty($_COOKIE['age'])){
                     echo $_COOKIE['age'];
@@ -46,8 +46,8 @@
             </input>
             <button type="submit">Valider</button>
         </form>
-        <? if (!empty($_COOKIE[nom]) and !empty($_COOKIE[prenom]) and !empty($_COOKIE[age])){
-            echo <? "<span> Vous êtes $_COOKIE['nom'] $_COOKIE['prenom'] et vous avez $_COOKIE['age']</span>";
+        <? if (!empty($_COOKIE['nom']) && !empty($_COOKIE['prenom']) && !empty($_COOKIE['age'])){
+            echo <? "<H1> Bonjour {$_COOKIE['nom']} {$_COOKIE['prenom']} et vous avez {$_COOKIE['age']}</span>";
         }
         ?>
     </body>
