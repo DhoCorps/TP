@@ -1,6 +1,6 @@
 $limit = 100;
 $i = 0;
-while($i<$limit){
+while($i<=$limit){
     echo "$i <br/>";
     $i+=2;
 }
